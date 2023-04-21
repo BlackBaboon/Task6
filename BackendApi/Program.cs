@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
 using DataAccess.Wrapper;
-using BusinessLogic.Services;
+using BusinessLogic.Services;    
 using DataAccess;
 using Domain.Interfaces;
 using Microsoft.OpenApi.Models;
@@ -17,24 +17,24 @@ namespace BackendApi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddDbContext<ИнтернетмагазинContext>(
+            builder.Services.AddDbContext<Г€Г­ГІГҐГ°Г­ГҐГІГ¬Г ГЈГ Г§ГЁГ­Context>(
                 optionsAction: options => options.UseSqlServer(
-                    connectionString: "Server= LAPTOP-2TNGE6GH ;Database= Интернет-магазин; Trusted_Connection=True;"));
+                    connectionString: "Server= LAPTOP-2TNGE6GH ;Database= Г€Г­ГІГҐГ°Г­ГҐГІ-Г¬Г ГЈГ Г§ГЁГ­; Trusted_Connection=True;"));
             builder.Services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Интернет-магазин API",
-                    Description = "Краткое описание вашего API",
+                    Title = "Г€Г­ГІГҐГ°Г­ГҐГІ-Г¬Г ГЈГ Г§ГЁГ­ API",
+                    Description = "ГЉГ°Г ГІГЄГ®ГҐ Г®ГЇГЁГ±Г Г­ГЁГҐ ГўГ ГёГҐГЈГ® API",
                     Contact = new OpenApiContact
                     {
-                        Name = "Пример контакта",
+                        Name = "ГЏГ°ГЁГ¬ГҐГ° ГЄГ®Г­ГІГ ГЄГІГ ",
                         Url = new Uri("https://example.com/contact")
                     },
                     License = new OpenApiLicense
                     {
-                        Name = "Пример лицензии",
+                        Name = "ГЏГ°ГЁГ¬ГҐГ° Г«ГЁГ¶ГҐГ­Г§ГЁГЁ",
                         Url = new Uri("https://example.com/license")
                     }
                 });
